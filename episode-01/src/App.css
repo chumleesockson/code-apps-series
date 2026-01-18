@@ -1,0 +1,38 @@
+/* Timesheet App Styles - Additional custom styles */
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.15);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.25);
+}
+
+/* Focus ring styles */
+*:focus-visible {
+	outline: 2px solid rgba(99, 102, 241, 0.5);
+	outline-offset: 2px;
+}
+
+/* Number input styles */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}

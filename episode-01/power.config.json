@@ -1,0 +1,13 @@
+{
+  "appId": "",
+  "appDisplayName": "Timesheets",
+  "description": null,
+  "environmentId": "7b99b9f3-18af-ea78-b17a-4f9d42ba0b13",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "logoPath": "Default",
+  "localAppUrl": "http://localhost:3000/",
+  "region": "prod",
+  "connectionReferences": {},
+  "databaseReferences": {}
+}

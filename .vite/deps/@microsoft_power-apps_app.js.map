@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/@microsoft/power-apps/src/app/ContextProvider.ts"],
+  "sourcesContent": [null],
+  "mappings": ";;;;;;;AAOA,IAAI;AAEJ,eAAsB,aAAU;AAC9B,MAAI,SAAS;AACX,WAAO;;AAGT,YAAU,MAAM,mBAA6B,gBAAgB,YAAY;AACzE,SAAO;AACT;",
+  "names": []
+}

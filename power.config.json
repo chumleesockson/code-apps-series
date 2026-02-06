@@ -1,0 +1,44 @@
+{
+  "appId": "fea15237-637e-4fc1-9ae1-22573b8b3838",
+  "appDisplayName": "Timesheets",
+  "description": null,
+  "environmentId": "7b99b9f3-18af-ea78-b17a-4f9d42ba0b13",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "logoPath": "Default",
+  "localAppUrl": "http://localhost:3000/",
+  "region": "prod",
+  "connectionReferences": {
+    "4046b7c2-e463-4eb1-82b5-4593eaec828c": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_office365users",
+      "displayName": "Office 365 Users",
+      "dataSources": [
+        "office365users"
+      ],
+      "dataSets": {}
+    }
+  },
+  "databaseReferences": {
+    "default.cds": {
+      "databaseDetails": null,
+      "dataSources": {
+        "timesheets": {
+          "entitySetName": "cha_timesheets",
+          "logicalName": "cha_timesheet",
+          "isHidden": false
+        },
+        "projects": {
+          "entitySetName": "cha_projects",
+          "logicalName": "cha_project",
+          "isHidden": false
+        },
+        "timesheetentries": {
+          "entitySetName": "cha_timesheetentries",
+          "logicalName": "cha_timesheetentry",
+          "isHidden": false
+        }
+      },
+      "actions": null
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+	font-family:
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		Roboto,
+		sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+}
+
+#root {
+	min-height: 100vh;
+}
+
+/* Theme transition for smooth switching */
+html {
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+html * {
+	transition:
+		background-color 0.3s ease,
+		border-color 0.3s ease,
+		color 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+/* Exclude elements that need instant transitions */
+html *:where([class*="animate-"], [class*="transition-"]) {
+	transition-property: all;
+}

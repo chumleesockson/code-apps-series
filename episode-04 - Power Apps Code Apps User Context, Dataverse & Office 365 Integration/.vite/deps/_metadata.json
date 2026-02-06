@@ -1,0 +1,70 @@
+{
+  "hash": "3bd49df3",
+  "configHash": "b5531d6e",
+  "lockfileHash": "1196638b",
+  "browserHash": "bd54f1b9",
+  "optimized": {
+    "@headlessui/react": {
+      "src": "../../node_modules/@headlessui/react/dist/headlessui.esm.js",
+      "file": "@headlessui_react.js",
+      "fileHash": "83d2438a",
+      "needsInterop": false
+    },
+    "@microsoft/power-apps/app": {
+      "src": "../../node_modules/@microsoft/power-apps/lib/app/index.js",
+      "file": "@microsoft_power-apps_app.js",
+      "fileHash": "4a3a3086",
+      "needsInterop": false
+    },
+    "@microsoft/power-apps/data": {
+      "src": "../../node_modules/@microsoft/power-apps/lib/data/index.js",
+      "file": "@microsoft_power-apps_data.js",
+      "fileHash": "af8bccc7",
+      "needsInterop": false
+    },
+    "canvas-confetti": {
+      "src": "../../node_modules/canvas-confetti/dist/confetti.module.mjs",
+      "file": "canvas-confetti.js",
+      "fileHash": "805b0b47",
+      "needsInterop": false
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "d740c6bd",
+      "needsInterop": false
+    },
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "dc6760fb",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "4eda9890",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "a9216c5a",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-TCCU4CRZ": {
+      "file": "chunk-TCCU4CRZ.js"
+    },
+    "chunk-R3E4LXVO": {
+      "file": "chunk-R3E4LXVO.js"
+    },
+    "chunk-P6RTVJOB": {
+      "file": "chunk-P6RTVJOB.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
+}

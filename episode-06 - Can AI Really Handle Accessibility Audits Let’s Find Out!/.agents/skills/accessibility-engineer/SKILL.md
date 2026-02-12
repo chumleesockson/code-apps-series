@@ -132,49 +132,49 @@ Build for everyone - accessibility is not optional.
 ```jsx
 // Modal: Trap focus inside
 function Modal({ isOpen, onClose, children }) {
-	const modalRef = useRef();
+  const modalRef = useRef()
 
-	useEffect(() => {
-		if (!isOpen) return;
+  useEffect(() => {
+    if (!isOpen) return
 
-		// Focus first focusable element
-		const firstFocusable = modalRef.current.querySelector('button, input, a');
-		firstFocusable?.focus();
+    // Focus first focusable element
+    const firstFocusable = modalRef.current.querySelector('button, input, a')
+    firstFocusable?.focus()
 
-		// Trap focus
-		function handleTab(e) {
-			if (e.key !== 'Tab') return;
+    // Trap focus
+    function handleTab(e) {
+      if (e.key !== 'Tab') return
 
-			const focusableElements = modalRef.current.querySelectorAll(
-				'button, input, a, [tabindex]:not([tabindex="-1"])'
-			);
+      const focusableElements = modalRef.current.querySelectorAll(
+        'button, input, a, [tabindex]:not([tabindex="-1"])'
+      )
 
-			const first = focusableElements[0];
-			const last = focusableElements[focusableElements.length - 1];
+      const first = focusableElements[0]
+      const last = focusableElements[focusableElements.length - 1]
 
-			if (e.shiftKey) {
-				if (document.activeElement === first) {
-					last.focus();
-					e.preventDefault();
-				}
-			} else {
-				if (document.activeElement === last) {
-					first.focus();
-					e.preventDefault();
-				}
-			}
-		}
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          last.focus()
+          e.preventDefault()
+        }
+      } else {
+        if (document.activeElement === last) {
+          first.focus()
+          e.preventDefault()
+        }
+      }
+    }
 
-		document.addEventListener('keydown', handleTab);
-		return () => document.removeEventListener('keydown', handleTab);
-	}, [isOpen]);
+    document.addEventListener('keydown', handleTab)
+    return () => document.removeEventListener('keydown', handleTab)
+  }, [isOpen])
 
-	return isOpen ? (
-		<div role="dialog" aria-modal="true" ref={modalRef}>
-			{children}
-			<button onClick={onClose}>Close</button>
-		</div>
-	) : null;
+  return isOpen ? (
+    <div role="dialog" aria-modal="true" ref={modalRef}>
+      {children}
+      <button onClick={onClose}>Close</button>
+    </div>
+  ) : null
 }
 ```
 
@@ -325,24 +325,24 @@ function Modal({ isOpen, onClose, children }) {
 
 ```jsx
 function EmailInput({ error }) {
-	const errorId = 'email-error';
+  const errorId = 'email-error'
 
-	return (
-		<>
-			<label htmlFor="email">Email</label>
-			<input
-				id="email"
-				type="email"
-				aria-invalid={!!error}
-				aria-describedby={error ? errorId : undefined}
-			/>
-			{error && (
-				<div id={errorId} role="alert">
-					{error}
-				</div>
-			)}
-		</>
-	);
+  return (
+    <>
+      <label htmlFor="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        aria-invalid={!!error}
+        aria-describedby={error ? errorId : undefined}
+      />
+      {error && (
+        <div id={errorId} role="alert">
+          {error}
+        </div>
+      )}
+    </>
+  )
 }
 ```
 
@@ -413,13 +413,13 @@ function EmailInput({ error }) {
 
 ```jsx
 <figure>
-	<img src="complex-chart.png" alt="Sales data for 2024" />
-	<figcaption>
-		<details>
-			<summary>Detailed description</summary>
-			<p>Q1: $100k, Q2: $150k, Q3: $180k, Q4: $220k. Shows 50% growth year-over-year.</p>
-		</details>
-	</figcaption>
+  <img src="complex-chart.png" alt="Sales data for 2024" />
+  <figcaption>
+    <details>
+      <summary>Detailed description</summary>
+      <p>Q1: $100k, Q2: $150k, Q3: $180k, Q4: $220k. Shows 50% growth year-over-year.</p>
+    </details>
+  </figcaption>
 </figure>
 ```
 
@@ -427,8 +427,8 @@ function EmailInput({ error }) {
 
 ```jsx
 <video controls>
-	<source src="video.mp4" type="video/mp4" />
-	<track kind="captions" src="captions.vtt" srclang="en" label="English" default />
+  <source src="video.mp4" type="video/mp4" />
+  <track kind="captions" src="captions.vtt" srclang="en" label="English" default />
 </video>
 ```
 
@@ -489,13 +489,13 @@ it('has no accessibility violations', async () => {
 
 ```jsx
 <button
-	type="button"
-	onClick={handleClick}
-	disabled={isDisabled}
-	aria-busy={isLoading}
-	aria-label={ariaLabel}
+  type="button"
+  onClick={handleClick}
+  disabled={isDisabled}
+  aria-busy={isLoading}
+  aria-label={ariaLabel}
 >
-	{children}
+  {children}
 </button>
 ```
 
@@ -503,15 +503,15 @@ it('has no accessibility violations', async () => {
 
 ```jsx
 <div
-	role="dialog"
-	aria-modal="true"
-	aria-labelledby="dialog-title"
-	aria-describedby="dialog-description"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="dialog-title"
+  aria-describedby="dialog-description"
 >
-	<h2 id="dialog-title">Dialog Title</h2>
-	<p id="dialog-description">Dialog description</p>
+  <h2 id="dialog-title">Dialog Title</h2>
+  <p id="dialog-description">Dialog description</p>
 
-	<button onClick={onClose}>Close</button>
+  <button onClick={onClose}>Close</button>
 </div>
 ```
 
@@ -519,32 +519,32 @@ it('has no accessibility violations', async () => {
 
 ```jsx
 <div>
-	<div role="tablist">
-		<button
-			role="tab"
-			aria-selected={activeTab === 'tab1'}
-			aria-controls="panel1"
-			onClick={() => setActiveTab('tab1')}
-		>
-			Tab 1
-		</button>
-		<button
-			role="tab"
-			aria-selected={activeTab === 'tab2'}
-			aria-controls="panel2"
-			onClick={() => setActiveTab('tab2')}
-		>
-			Tab 2
-		</button>
-	</div>
+  <div role="tablist">
+    <button
+      role="tab"
+      aria-selected={activeTab === 'tab1'}
+      aria-controls="panel1"
+      onClick={() => setActiveTab('tab1')}
+    >
+      Tab 1
+    </button>
+    <button
+      role="tab"
+      aria-selected={activeTab === 'tab2'}
+      aria-controls="panel2"
+      onClick={() => setActiveTab('tab2')}
+    >
+      Tab 2
+    </button>
+  </div>
 
-	<div id="panel1" role="tabpanel" hidden={activeTab !== 'tab1'}>
-		Panel 1 content
-	</div>
+  <div id="panel1" role="tabpanel" hidden={activeTab !== 'tab1'}>
+    Panel 1 content
+  </div>
 
-	<div id="panel2" role="tabpanel" hidden={activeTab !== 'tab2'}>
-		Panel 2 content
-	</div>
+  <div id="panel2" role="tabpanel" hidden={activeTab !== 'tab2'}>
+    Panel 2 content
+  </div>
 </div>
 ```
 
@@ -614,6 +614,12 @@ it('has no accessibility violations', async () => {
 ---
 
 ## Related Resources
+
+**Skills:**
+
+- `ux-designer` - Accessible design patterns
+- `frontend-builder` - Accessible React components
+- `testing-strategist` - Accessibility testing
 
 **External:**
 

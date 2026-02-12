@@ -929,6 +929,11 @@ function App() {
 
 	return (
 		<div className="min-h-screen bg-linear-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+			{/* Skip to main content link */}
+			<a href="#main-content" className="skip-link">
+				Skip to main content
+			</a>
+
 			{/* Mobile Sidebar Overlay */}
 			<AnimatePresence>
 				{sidebarOpen && (
@@ -970,40 +975,43 @@ function App() {
 					</div>
 
 					{/* Navigation */}
-					<nav className="flex-1 space-y-2">
-						{[
-							{
-								icon: LayoutDashboard,
-								label: "Dashboard",
-								active: true,
-							},
-							{
-								icon: BarChart3,
-								label: "Reports",
-								active: false,
-							},
-							{
-								icon: Settings,
-								label: "Settings",
-								active: false,
-							},
-						].map((item) => (
-							<motion.button
-								key={item.label}
-								whileHover={{ x: 4 }}
-								whileTap={{ scale: 0.98 }}
-								className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-200 ${
-									item.active
-										? "bg-linear-to-r from-indigo-500/20 to-purple-500/20 text-slate-900 dark:text-white border border-indigo-500/30"
-										: "text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5"
-								}`}
-							>
-								<item.icon className="w-5 h-5" />
-								<span className="font-medium">
-									{item.label}
-								</span>
-							</motion.button>
-						))}
+					<nav aria-label="Main navigation" className="flex-1">
+						<ul className="space-y-2">
+							{[
+								{
+									icon: LayoutDashboard,
+									label: "Dashboard",
+									active: true,
+								},
+								{
+									icon: BarChart3,
+									label: "Reports",
+									active: false,
+								},
+								{
+									icon: Settings,
+									label: "Settings",
+									active: false,
+								},
+							].map((item) => (
+								<li key={item.label}>
+									<motion.button
+										whileHover={{ x: 4 }}
+										whileTap={{ scale: 0.98 }}
+										className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-200 ${
+											item.active
+												? "bg-linear-to-r from-indigo-500/20 to-purple-500/20 text-slate-900 dark:text-white border border-indigo-500/30"
+												: "text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5"
+										}`}
+									>
+										<item.icon className="w-5 h-5" />
+										<span className="font-medium">
+											{item.label}
+										</span>
+									</motion.button>
+								</li>
+							))}
+						</ul>
 					</nav>
 
 					{/* Theme Toggle */}
@@ -1075,7 +1083,7 @@ function App() {
 							<div className="p-2 bg-linear-to-br from-indigo-500 to-purple-600 rounded-xl shadow-lg shadow-indigo-500/30">
 								<Clock className="w-5 h-5 text-white" />
 							</div>
-							<h1 className="text-xl font-bold text-slate-900 dark:text-white hidden sm:block">
+							<h1 className="text-xl font-bold text-slate-900 dark:text-white sr-only sm:not-sr-only">
 								Weekly Timesheet
 							</h1>
 						</div>
@@ -1213,7 +1221,7 @@ function App() {
 				</div>
 
 				{/* Timesheet Grid */}
-				<main className="px-4 lg:px-8 pb-8">
+				<main id="main-content" className="px-4 lg:px-8 pb-8">
 					{loading ? (
 						<div className="flex items-center justify-center py-20">
 							<div className="flex flex-col items-center gap-4">
